@@ -1,5 +1,6 @@
 import { useCountUp } from "@/hooks/useCountUp";
 import ScrollAnimate from "./ScrollAnimate";
+import werkandmeLogo from "@/assets/werkandme-logo.png";
 
 const stats = [
   { value: 42, suffix: "%", label: "Overall Annual Turnover", borderClass: "stat-card-border-green" },
@@ -35,8 +36,8 @@ export default function HeroSection() {
       <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent pointer-events-none z-10" />
       <div className="brand-green-bar w-full" />
 
-      <div className="absolute top-5 right-6 md:right-10 text-sm text-muted-foreground font-medium">
-        werkandme.com
+      <div className="absolute top-5 right-6 md:right-10">
+        <img src={werkandmeLogo} alt="WerkandMe" className="h-6 md:h-7 opacity-80" />
       </div>
 
       <div className="content-width pt-16 pb-20 md:pt-24 md:pb-28">

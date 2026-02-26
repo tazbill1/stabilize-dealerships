@@ -1,4 +1,5 @@
 import ScrollAnimate from "./ScrollAnimate";
+import werkandmeLogo from "@/assets/werkandme-logo.png";
 
 const featureCards = [
   { icon: "🏆", title: "Challenge", desc: "Performance-driven competitions that boost results" },
@@ -11,7 +12,10 @@ const featureCards = [
 export default function AboutCTA() {
   return (
     <section className="section-padding" style={{ backgroundColor: "hsl(240 33% 14%)" }}>
-      <div className="content-width">
+      <div className="content-width relative">
+        <div className="absolute top-0 right-0">
+          <img src={werkandmeLogo} alt="WerkandMe" className="h-6 md:h-7 opacity-70" />
+        </div>
         <ScrollAnimate>
           <p className="italic text-brand-caption text-sm mb-4">
             This report was published by WerkandMe — an employee engagement platform built by dealership people, for dealership people.
