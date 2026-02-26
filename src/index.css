@@ -188,3 +188,158 @@
     @apply py-20 md:py-24 lg:py-28;
   }
 }
+
+/* ===== Print Styles ===== */
+@media print {
+  @page {
+    size: A4;
+    margin: 1.5cm 2cm;
+  }
+
+  html {
+    font-size: 11px;
+  }
+
+  body {
+    background: white !important;
+    color: #1a1a1a !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Hide non-print elements */
+  .toc-sidebar,
+  .back-to-top,
+  nav,
+  button,
+  a[href="#section-7"],
+  .callout-green a,
+  .callout-green button {
+    display: none !important;
+  }
+
+  /* Remove sidebar offset */
+  .lg\:ml-60 {
+    margin-left: 0 !important;
+  }
+
+  /* All sections: white bg, dark text, no padding bloat */
+  section,
+  .section-dark,
+  .section-light {
+    background: white !important;
+    color: #1a1a1a !important;
+    padding: 1.5rem 0 !important;
+    page-break-inside: avoid;
+  }
+
+  /* Force dark text on everything */
+  h1, h2, h3, h4, h5, h6,
+  p, li, span, td, th, div {
+    color: #1a1a1a !important;
+  }
+
+  /* Muted text slightly lighter for hierarchy */
+  .text-muted-foreground {
+    color: #555 !important;
+  }
+
+  /* Brand green accents stay for visual identity */
+  .section-number {
+    background: #A8E10C !important;
+    color: #0D0D0D !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Cards: white bg with border */
+  .stat-card,
+  .pull-quote,
+  .finding-card,
+  [class*="bg-card"],
+  [class*="bg-\\[#1E1E2E\\]"] {
+    background: white !important;
+    border: 1px solid #ddd !important;
+    box-shadow: none !important;
+  }
+
+  /* Keep colored top/left borders on cards */
+  .stat-card-border-green { border-top: 3px solid #A8E10C !important; }
+  .stat-card-border-orange { border-top: 3px solid #FF6B35 !important; }
+  .stat-card-border-teal { border-top: 3px solid #00838F !important; }
+  .stat-card-border-gold { border-top: 3px solid #F5A623 !important; }
+  .pull-quote { border-left: 4px solid #A8E10C !important; }
+  .finding-border-green { border-left: 4px solid #A8E10C !important; }
+  .finding-border-orange { border-left: 4px solid #FF6B35 !important; }
+  .finding-border-teal { border-left: 4px solid #00838F !important; }
+  .finding-border-gold { border-left: 4px solid #F5A623 !important; }
+
+  /* Pull quote text */
+  .pull-quote p,
+  .pull-quote span {
+    color: #333 !important;
+  }
+
+  /* Tables */
+  table {
+    border-collapse: collapse !important;
+    width: 100% !important;
+  }
+  th {
+    background: #f0f0f0 !important;
+    color: #1a1a1a !important;
+    font-weight: 700 !important;
+  }
+  td, th {
+    border: 1px solid #ccc !important;
+    padding: 6px 8px !important;
+  }
+
+  /* Charts: ensure they print */
+  .recharts-wrapper {
+    page-break-inside: avoid;
+  }
+
+  /* Content width: full width for print */
+  .content-width,
+  .chart-width {
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+
+  /* Remove animations */
+  * {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  /* CTA section: hide the whole block */
+  .callout-green {
+    display: none !important;
+  }
+
+  /* Brand green bar */
+  .brand-green-bar {
+    height: 3px !important;
+    background: #A8E10C !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Page breaks */
+  .section-marker {
+    page-break-before: always;
+    padding-top: 0;
+  }
+
+  /* Don't break inside these */
+  .finding-card,
+  .stat-card,
+  .pull-quote,
+  figure,
+  .recharts-wrapper {
+    page-break-inside: avoid;
+  }
+}

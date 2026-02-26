@@ -79,7 +79,10 @@ export default function HeroSection() {
         <p className="text-sm text-brand-caption mb-8">Published by WerkandMe · March 2026</p>
 
         <div className="flex flex-wrap gap-4">
-          <button className="px-6 py-3 rounded-lg bg-primary text-primary-foreground font-semibold text-sm hover:bg-brand-green-hover transition-all duration-200 hover:shadow-lg hover:shadow-primary/20">
+          <button
+            onClick={() => window.print()}
+            className="px-6 py-3 rounded-lg bg-primary text-primary-foreground font-semibold text-sm hover:bg-brand-green-hover transition-all duration-200 hover:shadow-lg hover:shadow-primary/20"
+          >
             Download PDF
           </button>
           <a
