@@ -19,29 +19,18 @@ const data = [
   { year: "2028", openings: 190, completions: 132, gap: "58K" },
 ];
 
-const renderGapLabel = (props: any) => {
-  const { x, y, width, index } = props;
+const GapLabel = (props: any) => {
+  const { x, y, width, value, index } = props;
   if (index === undefined) return null;
   const gap = data[index]?.gap;
   if (!gap) return null;
   return (
     <g>
-      <rect
-        x={x + width / 2 - 28}
-        y={y - 28}
-        width={56}
-        height={20}
-        rx={4}
-        fill="#FF6B35"
-      />
-      <text
-        x={x + width / 2}
-        y={y - 15}
-        textAnchor="middle"
-        fill="#fff"
-        fontSize={10}
-        fontWeight={600}
-      >
+      <text x={x + width / 2} y={y - 8} textAnchor="middle" fill="#B0B0B0" fontWeight={600} fontSize={11}>
+        {value}K
+      </text>
+      <rect x={x + width / 2 - 28} y={y - 32} width={56} height={18} rx={4} fill="#FF6B35" />
+      <text x={x + width / 2} y={y - 20} textAnchor="middle" fill="#fff" fontSize={10} fontWeight={600}>
         Gap: {gap}
       </text>
     </g>
@@ -129,9 +118,7 @@ export default function Section4Pipeline() {
                 <LabelList
                   dataKey="completions"
                   position="top"
-                  formatter={(v: number) => `${v}K`}
-                  style={{ fill: "#B0B0B0", fontWeight: 600, fontSize: 11 }}
-                  content={renderGapLabel}
+                  content={<GapLabel />}
                 />
               </Bar>
             </BarChart>

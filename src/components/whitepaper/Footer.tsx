@@ -9,7 +9,7 @@ export default function Footer() {
             <a href="https://werkandme.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
               werkandme.com
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
+            <a href="https://www.linkedin.com/company/werkandme" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
               LinkedIn
             </a>
           </div>
