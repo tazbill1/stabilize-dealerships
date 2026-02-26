@@ -1,0 +1,115 @@
+import { useEffect, useRef, useState } from "react";
+import SectionMarker from "./SectionMarker";
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  ResponsiveContainer,
+  Cell,
+  LabelList,
+} from "recharts";
+
+const data = [
+  { metric: "Job Satisfaction", value: 82, color: "#2E7D32" },
+  { metric: "Intent to Stay\n(Near-Term)", value: 71, color: "#43A047" },
+  { metric: "Long-Term Retention\nConfidence", value: 48, color: "#F5A623" },
+  { metric: "Career Path\nClarity", value: 39, color: "#FF6B35" },
+];
+
+export default function Section5Satisfaction() {
+  const chartRef = useRef<HTMLDivElement>(null);
+  const [animate, setAnimate] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) setAnimate(true);
+      },
+      { threshold: 0.2 }
+    );
+    if (chartRef.current) observer.observe(chartRef.current);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <section id="section-5" className="section-light section-padding">
+      <div className="content-width">
+        <SectionMarker number={5} title="The Satisfaction Paradox" light />
+        <p className="text-brand-body-light text-sm md:text-base leading-relaxed mb-12">
+          CDK Global's 2025 Dealership Workplace Study delivered a surprising headline: 82% of dealership employees report job satisfaction, and near-term intent to leave has declined. On the surface, this is encouraging. But beneath the topline satisfaction number lies a structural vulnerability — long-term retention confidence and career path clarity remain significantly lower.
+        </p>
+      </div>
+
+      <div className="chart-width mb-4" ref={chartRef}>
+        <h3 className="text-center text-brand-light-foreground font-semibold text-base md:text-lg mb-6">
+          The Satisfaction Paradox: Happy Today, Gone Tomorrow
+        </h3>
+        <div style={{ height: 380 }}>
+          <ResponsiveContainer width="100%" height="100%">
+            <BarChart
+              data={data}
+              margin={{ top: 30, right: 30, left: 10, bottom: 20 }}
+              barCategoryGap="25%"
+            >
+              <CartesianGrid strokeDasharray="3 3" stroke="#ddd" horizontal vertical={false} />
+              <XAxis
+                dataKey="metric"
+                tick={{ fill: "#4A4A5A", fontSize: 11 }}
+                axisLine={{ stroke: "#ccc" }}
+                tickLine={false}
+                interval={0}
+                height={50}
+              />
+              <YAxis
+                domain={[0, 100]}
+                tickFormatter={(v) => `${v}%`}
+                tick={{ fill: "#4A4A5A", fontSize: 12 }}
+                axisLine={false}
+                tickLine={false}
+              />
+              <Bar
+                dataKey="value"
+                radius={[4, 4, 0, 0]}
+                isAnimationActive={animate}
+                animationDuration={1200}
+                animationEasing="ease-out"
+              >
+                {data.map((entry, i) => (
+                  <Cell key={i} fill={entry.color} />
+                ))}
+                <LabelList
+                  dataKey="value"
+                  position="top"
+                  formatter={(v: number) => `${v}%`}
+                  style={{ fill: "#4A4A5A", fontWeight: 700, fontSize: 14 }}
+                />
+              </Bar>
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
+        {/* Declining arrow overlay */}
+        <div className="flex justify-center -mt-2 mb-2">
+          <div className="flex items-center gap-1 text-brand-orange text-xs font-semibold">
+            <span>82%</span>
+            <svg width="80" height="16" viewBox="0 0 80 16" fill="none" className="mx-1">
+              <line x1="0" y1="2" x2="70" y2="14" stroke="#FF6B35" strokeWidth="2" strokeDasharray="4 3" />
+              <polygon points="70,10 80,14 70,18" fill="#FF6B35" />
+            </svg>
+            <span>39%</span>
+          </div>
+        </div>
+        <p className="text-center text-brand-caption text-xs mt-2">
+          Sources: CDK 2025 Dealership Workplace Study (satisfaction, intent); career path and retention confidence estimates derived from CDK and industry sentiment data.
+        </p>
+      </div>
+
+      <div className="content-width mt-12">
+        <p className="text-brand-body-light text-sm md:text-base leading-relaxed">
+          This pattern — high present satisfaction with low future confidence — is a leading indicator of attrition. Employees are not unhappy today; they simply cannot see a future. The implication for dealership leaders is clear: satisfaction surveys alone are insufficient. Retention strategy must address career visibility, skill development, and long-term earnings trajectory.
+        </p>
+      </div>
+    </section>
+  );
+}
