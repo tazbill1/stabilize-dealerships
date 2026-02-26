@@ -81,7 +81,7 @@ export default function HeroSection() {
 
         <p className="text-sm text-brand-caption mb-8">Published by WerkandMe · March 2026</p>
 
-        <div className="flex flex-wrap gap-4">
+        <div className="flex flex-wrap gap-4 hero-cta-buttons">
           <a
             href="#"
             title="PDF coming soon"
