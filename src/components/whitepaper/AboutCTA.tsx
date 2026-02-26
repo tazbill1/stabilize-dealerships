@@ -63,7 +63,11 @@ export default function AboutCTA() {
               >
                 Schedule a Demo
               </a>
-              <button className="px-6 py-3 rounded-lg font-semibold text-sm border-2 transition-all duration-200 hover:shadow-lg" style={{ borderColor: "#0D0D0D", color: "#0D0D0D" }}>
+              <button
+                onClick={() => window.print()}
+                className="px-6 py-3 rounded-lg font-semibold text-sm border-2 transition-all duration-200 hover:shadow-lg"
+                style={{ borderColor: "#0D0D0D", color: "#0D0D0D" }}
+              >
                 Download PDF
               </button>
             </div>
