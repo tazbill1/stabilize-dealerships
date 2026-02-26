@@ -11,7 +11,7 @@ const featureCards = [
 
 export default function AboutCTA() {
   return (
-    <section className="section-padding" style={{ backgroundColor: "hsl(240 33% 14%)" }}>
+    <section className="section-padding" style={{ backgroundColor: "hsl(222 44% 14%)" }}>
       <div className="content-width relative">
         <div className="absolute top-0 right-0">
           <img src={werkandmeLogo} alt="WerkandMe" className="h-6 md:h-7 opacity-70" />
