@@ -1,4 +1,5 @@
 import SectionMarker from "./SectionMarker";
+import ScrollAnimate from "./ScrollAnimate";
 
 const findings = [
   { border: "finding-border-green", text: "Overall dealership turnover remains elevated at 42% across all positions (2024), well above most retail benchmarks." },
@@ -17,27 +18,33 @@ export default function Section1Executive() {
 
         <div className="space-y-4 mb-12">
           {findings.map((f, i) => (
-            <div key={i} className={`finding-card ${f.border} p-5 md:p-6`}>
-              <div className="flex items-start gap-3">
-                <span className="font-bold text-lg text-brand-light-foreground shrink-0">{i + 1}.</span>
-                <p className="text-brand-body-light text-sm md:text-base leading-relaxed">{f.text}</p>
+            <ScrollAnimate key={i} delay={i * 80}>
+              <div className={`finding-card ${f.border} p-5 md:p-6`}>
+                <div className="flex items-start gap-3">
+                  <span className="font-bold text-lg text-brand-light-foreground shrink-0">{i + 1}.</span>
+                  <p className="text-brand-body-light text-sm md:text-base leading-relaxed">{f.text}</p>
+                </div>
               </div>
-            </div>
+            </ScrollAnimate>
           ))}
         </div>
 
-        <div className="pull-quote p-6 md:p-8 mb-8">
-          <p className="text-foreground italic text-base md:text-lg leading-relaxed">
-            "High churn is not a people problem — it is a system design problem. Dealerships that build structured compensation, career pathways, and onboarding systems consistently outperform on retention."
-          </p>
-        </div>
+        <ScrollAnimate>
+          <div className="pull-quote p-6 md:p-8 mb-8">
+            <p className="text-foreground italic text-base md:text-lg leading-relaxed">
+              "High churn is not a people problem — it is a system design problem. Dealerships that build structured compensation, career pathways, and onboarding systems consistently outperform on retention."
+            </p>
+          </div>
+        </ScrollAnimate>
 
-        <div className="callout-green p-6 md:p-8">
-          <h4 className="font-bold text-lg mb-3">What to do in the next 90 days:</h4>
-          <p className="text-sm md:text-base leading-relaxed">
-            Run a churn diagnostic by role. Stabilize earnings in your highest-turnover departments. Launch a structured 30-60-90 day onboarding program for new hires. Track service appointment lead time as a workforce health indicator.
-          </p>
-        </div>
+        <ScrollAnimate>
+          <div className="callout-green p-6 md:p-8">
+            <h4 className="font-bold text-lg mb-3">What to do in the next 90 days:</h4>
+            <p className="text-sm md:text-base leading-relaxed">
+              Run a churn diagnostic by role. Stabilize earnings in your highest-turnover departments. Launch a structured 30-60-90 day onboarding program for new hires. Track service appointment lead time as a workforce health indicator.
+            </p>
+          </div>
+        </ScrollAnimate>
       </div>
     </section>
   );

@@ -1,4 +1,5 @@
 import { useCountUp } from "@/hooks/useCountUp";
+import ScrollAnimate from "./ScrollAnimate";
 
 const stats = [
   { value: 42, suffix: "%", label: "Overall Annual Turnover", borderClass: "stat-card-border-green" },
@@ -37,17 +38,23 @@ export default function HeroSection() {
       </div>
 
       <div className="content-width pt-16 pb-20 md:pt-24 md:pb-28">
-        <span className="inline-block px-3 py-1 text-xs font-semibold tracking-wider rounded-md bg-primary/15 text-primary mb-6">
-          2026 INDUSTRY WHITE PAPER
-        </span>
+        <div className="animate-fade-in" style={{ animationDelay: "0.1s", animationFillMode: "both" }}>
+          <span className="inline-block px-3 py-1 text-xs font-semibold tracking-wider rounded-md bg-primary/15 text-primary mb-6">
+            2026 INDUSTRY WHITE PAPER
+          </span>
+        </div>
 
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-foreground leading-tight mb-4">
-          Stabilizing the Dealership Workforce
-        </h1>
+        <div className="animate-fade-in" style={{ animationDelay: "0.25s", animationFillMode: "both" }}>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-foreground leading-tight mb-4">
+            Stabilizing the Dealership Workforce
+          </h1>
+        </div>
 
-        <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-12">
-          Turnover, Talent, and the New Operating Model for U.S. Franchised Auto Dealerships
-        </p>
+        <div className="animate-fade-in" style={{ animationDelay: "0.4s", animationFillMode: "both" }}>
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-12">
+            Turnover, Talent, and the New Operating Model for U.S. Franchised Auto Dealerships
+          </p>
+        </div>
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
           {stats.map((s) => (
@@ -55,27 +62,29 @@ export default function HeroSection() {
           ))}
         </div>
 
-        <div className="mb-10">
-          <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-4">Key Findings</h3>
-          <ul className="space-y-2">
-            {keyFindings.map((f, i) => (
-              <li key={i} className="flex items-start gap-2 text-muted-foreground text-sm md:text-base">
-                <span className="text-primary mt-1.5 text-xs">•</span>
-                {f}
-              </li>
-            ))}
-          </ul>
-        </div>
+        <ScrollAnimate>
+          <div className="mb-10">
+            <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-4">Key Findings</h3>
+            <ul className="space-y-2">
+              {keyFindings.map((f, i) => (
+                <li key={i} className="flex items-start gap-2 text-muted-foreground text-sm md:text-base">
+                  <span className="text-primary mt-1.5 text-xs">•</span>
+                  {f}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </ScrollAnimate>
 
         <p className="text-sm text-brand-caption mb-8">Published by WerkandMe · March 2026</p>
 
         <div className="flex flex-wrap gap-4">
-          <button className="px-6 py-3 rounded-lg bg-primary text-primary-foreground font-semibold text-sm hover:bg-brand-green-hover transition-colors">
+          <button className="px-6 py-3 rounded-lg bg-primary text-primary-foreground font-semibold text-sm hover:bg-brand-green-hover transition-all duration-200 hover:shadow-lg hover:shadow-primary/20">
             Download PDF
           </button>
           <a
             href="#section-7"
-            className="px-6 py-3 rounded-lg border border-primary text-primary font-semibold text-sm hover:bg-primary/10 transition-colors"
+            className="px-6 py-3 rounded-lg border border-primary text-primary font-semibold text-sm hover:bg-primary/10 transition-all duration-200"
           >
             Jump to Solutions
           </a>
