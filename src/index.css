@@ -217,9 +217,11 @@
   .back-to-top,
   nav,
   button,
+  a[href="#"],
   a[href="#section-7"],
   .callout-green a,
-  .callout-green button {
+  .callout-green button,
+  .hero-cta-buttons {
     display: none !important;
   }
 
@@ -304,6 +306,10 @@
   .recharts-wrapper {
     page-break-inside: avoid;
   }
+  .recharts-cartesian-grid-bg,
+  .recharts-cartesian-grid line {
+    stroke: #ddd !important;
+  }
 
   /* Content width: full width for print */
   .content-width,
@@ -333,10 +339,14 @@
     print-color-adjust: exact;
   }
 
-  /* Page breaks */
+  /* Page breaks — skip the first section marker */
   .section-marker {
     page-break-before: always;
     padding-top: 0;
+  }
+  section:first-of-type .section-marker,
+  #section-1 .section-marker {
+    page-break-before: auto;
   }
 
   /* Don't break inside these */
