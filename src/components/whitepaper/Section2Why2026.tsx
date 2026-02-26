@@ -1,14 +1,26 @@
+import { useEffect, useRef, useState } from "react";
 import SectionMarker from "./SectionMarker";
-import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from "recharts";
 
-const data = [
+const segments = [
   { name: "Service & Parts", value: 54, color: "#00838F" },
   { name: "Sales", value: 26, color: "#FF6B35" },
-  { name: "Admin & Management", value: 14, color: "#F5A623" },
-  { name: "Other", value: 6, color: "#666666" },
+  { name: "Admin & Mgmt", value: 14, color: "#F5A623" },
+  { name: "Other", value: 6, color: "#888888" },
 ];
 
 export default function Section2Why2026() {
+  const barRef = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) setVisible(true); },
+      { threshold: 0.3 }
+    );
+    if (barRef.current) observer.observe(barRef.current);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section id="section-2" className="section-dark section-padding">
       <div className="content-width">
@@ -31,55 +43,42 @@ export default function Section2Why2026() {
       </div>
 
       <div className="chart-width mb-6">
-        <div className="flex flex-col items-center">
-          <div className="w-full max-w-md" style={{ height: 320 }}>
-            <ResponsiveContainer width="100%" height="100%">
-              <PieChart>
-                <Pie
-                  data={data}
-                  cx="50%"
-                  cy="50%"
-                  innerRadius={80}
-                  outerRadius={130}
-                  paddingAngle={2}
-                  dataKey="value"
-                  stroke="none"
-                >
-                  {data.map((entry, i) => (
-                    <Cell key={i} fill={entry.color} />
-                  ))}
-                </Pie>
-                <Tooltip
-                  contentStyle={{
-                    backgroundColor: "hsl(240 15% 15%)",
-                    border: "1px solid hsl(240 18% 19%)",
-                    borderRadius: "8px",
-                    color: "#fff",
-                    fontSize: "13px",
-                  }}
-                  formatter={(value: number, name: string) => [`${value}%`, name]}
-                />
-                <text x="50%" y="48%" textAnchor="middle" fill="#B0B0B0" fontSize="12">
-                  Average
-                </text>
-                <text x="50%" y="56%" textAnchor="middle" fill="#fff" fontSize="14" fontWeight="600">
-                  Dealership
-                </text>
-              </PieChart>
-            </ResponsiveContainer>
-          </div>
+        <h4 className="text-center text-muted-foreground text-sm font-medium uppercase tracking-wider mb-4">
+          Average Dealership Workforce Composition
+        </h4>
 
-          <div className="flex flex-wrap justify-center gap-4 mt-4">
-            {data.map((d) => (
-              <div key={d.name} className="flex items-center gap-2 text-sm text-muted-foreground">
-                <div className="w-3 h-3 rounded-sm" style={{ backgroundColor: d.color }} />
-                {d.name} ({d.value}%)
-              </div>
-            ))}
-          </div>
-
-          <p className="text-brand-caption text-xs mt-4">Source: NADA Data Mid-Year 2025</p>
+        {/* Stacked horizontal bar */}
+        <div ref={barRef} className="flex overflow-hidden rounded-lg" style={{ height: 52, gap: 2 }}>
+          {segments.map((seg) => (
+            <div
+              key={seg.name}
+              className="flex items-center justify-center transition-all duration-1000 ease-out"
+              style={{
+                width: visible ? `${seg.value}%` : "0%",
+                backgroundColor: seg.color,
+                minWidth: visible ? undefined : 0,
+              }}
+            >
+              {seg.value > 10 && (
+                <span className="text-white font-bold text-sm md:text-base whitespace-nowrap">
+                  {seg.value}%
+                </span>
+              )}
+            </div>
+          ))}
         </div>
+
+        {/* Legend */}
+        <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 mt-4">
+          {segments.map((seg) => (
+            <div key={seg.name} className="flex items-center gap-2 text-sm text-muted-foreground">
+              <div className="w-3 h-3 rounded-full shrink-0" style={{ backgroundColor: seg.color }} />
+              {seg.name} ({seg.value}%)
+            </div>
+          ))}
+        </div>
+
+        <p className="text-center text-brand-caption text-xs mt-4">Source: NADA Data Mid-Year 2025</p>
       </div>
 
       <div className="content-width">
