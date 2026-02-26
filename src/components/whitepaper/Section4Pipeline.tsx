@@ -29,8 +29,8 @@ const GapLabel = (props: any) => {
       <text x={x + width / 2} y={y - 8} textAnchor="middle" fill="#B0B0B0" fontWeight={600} fontSize={11}>
         {value}K
       </text>
-      <rect x={x + width / 2 - 28} y={y - 32} width={56} height={18} rx={4} fill="#FF6B35" />
-      <text x={x + width / 2} y={y - 20} textAnchor="middle" fill="#fff" fontSize={10} fontWeight={600}>
+      <rect x={x + width / 2 - 28} y={y - 36} width={56} height={18} rx={4} fill="#FF6B35" />
+      <text x={x + width / 2} y={y - 24} textAnchor="middle" fill="#fff" fontSize={10} fontWeight={600}>
         Gap: {gap}
       </text>
     </g>
@@ -69,7 +69,7 @@ export default function Section4Pipeline() {
           <ResponsiveContainer width="100%" height="100%">
             <BarChart
               data={data}
-              margin={{ top: 40, right: 30, left: 10, bottom: 5 }}
+              margin={{ top: 55, right: 30, left: 10, bottom: 5 }}
               barCategoryGap="30%"
               barGap={4}
             >
