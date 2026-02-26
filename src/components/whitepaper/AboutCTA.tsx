@@ -52,7 +52,9 @@ export default function AboutCTA() {
         <ScrollAnimate>
           <div className="callout-green p-8 md:p-12 text-center">
             <h3 className="text-xl md:text-2xl font-bold mb-2">Learn more and benchmark your dealership workforce</h3>
-            <p className="text-sm md:text-base mb-8 opacity-80">werkandme.com · tom@werkandme.com</p>
+            <p className="text-sm md:text-base mb-8 opacity-80">
+              <a href="https://www.werkandme.com" target="_blank" rel="noopener noreferrer" className="underline">werkandme.com</a> · <a href="mailto:tom@werkandme.com" className="underline">tom@werkandme.com</a>
+            </p>
             <div className="flex flex-wrap justify-center gap-4">
               <a
                 href="https://zbooking.us/1e8n6"

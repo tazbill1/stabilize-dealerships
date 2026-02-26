@@ -17,7 +17,7 @@ const data = [
   { role: "Service Advisors", value: 46, color: "#F5A623" },
   { role: "All Positions", value: 42, color: "#00838F" },
   { role: "Service Technicians", value: 33, color: "#00ACC1" },
-  { role: "Parts Department", value: 28, color: "#1A1A2E" },
+  { role: "Parts Department", value: 28, color: "#78909C" },
   { role: "Office & Admin", value: 25, color: "#666666" },
 ];
 

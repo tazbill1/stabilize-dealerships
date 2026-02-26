@@ -30,7 +30,9 @@ const keyFindings = [
 
 export default function HeroSection() {
   return (
-    <section className="section-dark relative">
+    <section className="section-dark relative overflow-hidden">
+      {/* Bottom gradient for smooth transition */}
+      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent pointer-events-none z-10" />
       <div className="brand-green-bar w-full" />
 
       <div className="absolute top-5 right-6 md:right-10 text-sm text-muted-foreground font-medium">
@@ -79,12 +81,14 @@ export default function HeroSection() {
         <p className="text-sm text-brand-caption mb-8">Published by WerkandMe · March 2026</p>
 
         <div className="flex flex-wrap gap-4">
-          <button
-            onClick={() => window.print()}
+          <a
+            href="#"
+            title="PDF coming soon"
+            onClick={(e) => { e.preventDefault(); window.print(); }}
             className="px-6 py-3 rounded-lg bg-primary text-primary-foreground font-semibold text-sm hover:bg-brand-green-hover transition-all duration-200 hover:shadow-lg hover:shadow-primary/20"
           >
             Download PDF
-          </button>
+          </a>
           <a
             href="#section-7"
             className="px-6 py-3 rounded-lg border border-primary text-primary font-semibold text-sm hover:bg-primary/10 transition-all duration-200"

@@ -189,6 +189,11 @@
   }
 }
 
+/* Scroll margin for TOC link targeting */
+[id^="section-"] {
+  scroll-margin-top: 2rem;
+}
+
 /* ===== Print Styles ===== */
 @media print {
   @page {

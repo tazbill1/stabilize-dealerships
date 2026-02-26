@@ -18,6 +18,17 @@ const data = [
   { metric: "Career Path\nClarity", value: 39, color: "#FF6B35" },
 ];
 
+const CustomTick = ({ x, y, payload }: any) => {
+  const lines = (payload?.value || "").split("\n");
+  return (
+    <text x={x} y={y} textAnchor="middle" fill="#4A4A5A" fontSize={11}>
+      {lines.map((line: string, i: number) => (
+        <tspan x={x} dy={i === 0 ? 0 : 14} key={i}>{line}</tspan>
+      ))}
+    </text>
+  );
+};
+
 export default function Section5Satisfaction() {
   const chartRef = useRef<HTMLDivElement>(null);
   const [animate, setAnimate] = useState(false);
@@ -56,7 +67,7 @@ export default function Section5Satisfaction() {
               <CartesianGrid strokeDasharray="3 3" stroke="#ddd" horizontal vertical={false} />
               <XAxis
                 dataKey="metric"
-                tick={{ fill: "#4A4A5A", fontSize: 11 }}
+                tick={<CustomTick />}
                 axisLine={{ stroke: "#ccc" }}
                 tickLine={false}
                 interval={0}
