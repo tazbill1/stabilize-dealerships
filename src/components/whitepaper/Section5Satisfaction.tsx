@@ -53,16 +53,16 @@ export default function Section5Satisfaction() {
         </p>
       </div>
 
-      <div className="chart-width mb-4" ref={chartRef}>
-        <h3 className="text-center text-brand-light-foreground font-semibold text-base md:text-lg mb-6">
+      <div className="chart-width mb-6" ref={chartRef}>
+        <h3 className="text-center text-brand-light-foreground font-semibold text-base md:text-lg mb-8">
           The Satisfaction Paradox: Happy Today, Gone Tomorrow
         </h3>
-        <div style={{ height: 380 }}>
+        <div className="h-[340px] md:h-[380px]">
           <ResponsiveContainer width="100%" height="100%">
             <BarChart
               data={data}
-              margin={{ top: 30, right: 30, left: 10, bottom: 20 }}
-              barCategoryGap="25%"
+              margin={{ top: 30, right: 20, left: 0, bottom: 24 }}
+              barCategoryGap="30%"
             >
               <CartesianGrid strokeDasharray="3 3" stroke="#ddd" horizontal vertical={false} />
               <XAxis
@@ -79,6 +79,7 @@ export default function Section5Satisfaction() {
                 tick={{ fill: "#4A4A5A", fontSize: 12 }}
                 axisLine={false}
                 tickLine={false}
+                width={40}
               />
               <Bar
                 dataKey="value"
@@ -101,7 +102,7 @@ export default function Section5Satisfaction() {
           </ResponsiveContainer>
         </div>
         {/* Declining arrow overlay */}
-        <div className="flex justify-center -mt-2 mb-2">
+        <div className="flex justify-center mt-1 mb-3">
           <div className="flex items-center gap-1 text-brand-orange text-xs font-semibold">
             <span>82%</span>
             <svg width="80" height="16" viewBox="0 0 80 16" fill="none" className="mx-1">
@@ -111,7 +112,7 @@ export default function Section5Satisfaction() {
             <span>39%</span>
           </div>
         </div>
-        <p className="text-center text-brand-caption text-xs mt-2">
+        <p className="text-center text-brand-caption text-xs mt-1">
           Sources: CDK 2025 Dealership Workplace Study (satisfaction, intent); career path and retention confidence estimates derived from CDK and industry sentiment data.
         </p>
       </div>
