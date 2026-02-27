@@ -12,18 +12,21 @@ import {
 } from "recharts";
 
 const data = [
-  { metric: "Job Satisfaction", value: 82, color: "#2E7D32" },
-  { metric: "Intent to Stay\n(Near-Term)", value: 71, color: "#43A047" },
-  { metric: "Long-Term Retention\nConfidence", value: 48, color: "#F5A623" },
+  { metric: "Job\nSatisfaction", value: 82, color: "#2E7D32" },
+  { metric: "Intent\nto Stay", value: 71, color: "#43A047" },
+  { metric: "Retention\nConfidence", value: 48, color: "#F5A623" },
   { metric: "Career Path\nClarity", value: 39, color: "#FF6B35" },
 ];
 
 const CustomTick = ({ x, y, payload }: any) => {
   const lines = (payload?.value || "").split("\n");
+  const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
+  const fontSize = isMobile ? 9 : 11;
+  const lineHeight = isMobile ? 11 : 14;
   return (
-    <text x={x} y={y + 8} textAnchor="middle" fill="#4A4A5A" fontSize={11}>
+    <text x={x} y={y + 8} textAnchor="middle" fill="#4A4A5A" fontSize={fontSize}>
       {lines.map((line: string, i: number) => (
-        <tspan x={x} dy={i === 0 ? 0 : 14} key={i}>{line}</tspan>
+        <tspan x={x} dy={i === 0 ? 0 : lineHeight} key={i}>{line}</tspan>
       ))}
     </text>
   );
