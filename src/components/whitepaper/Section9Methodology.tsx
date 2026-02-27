@@ -2,7 +2,7 @@ import SectionMarker from "./SectionMarker";
 import ScrollAnimate from "./ScrollAnimate";
 
 const definitions = [
-  { term: "Franchised dealership", def: "A new-car dealership operating under a franchise agreement with one or more OEMs. Does not include independent used-car dealers or aftermarket service-only facilities." },
+  { term: "Franchise dealership", def: "A new-car dealership operating under a franchise agreement with one or more OEMs. Does not include independent used-car dealers or aftermarket service-only facilities." },
   { term: "Annualized turnover", def: "Separations during the period divided by average headcount, annualized. Consistent with NADA Dealership Workforce Study methodology." },
   { term: "Occupation proxies", def: "Where dealership-specific demographic data is unavailable, BLS Current Population Survey occupation categories are used as proxies. These are clearly labeled in all charts." },
 ];
