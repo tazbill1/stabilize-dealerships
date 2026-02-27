@@ -55,7 +55,7 @@ export default function HeroSection() {
 
         <div className="animate-fade-in" style={{ animationDelay: "0.4s", animationFillMode: "both" }}>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-12">
-            Turnover, Talent, and the New Operating Model for U.S. Franchised Auto Dealerships
+            Turnover, Talent, and the New Operating Model for U.S. Franchise Auto Dealerships
           </p>
         </div>
 
