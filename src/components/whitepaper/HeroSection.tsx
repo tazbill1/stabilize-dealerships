@@ -21,14 +21,6 @@ function StatCard({ value, suffix, prefix, label, borderClass }: typeof stats[0]
   );
 }
 
-const keyFindings = [
-  "Turnover is not uniform — it clusters by role with predictable root causes",
-  "Technician supply is structurally constrained for the foreseeable decade",
-  "Employee satisfaction can rise while long-run retention remains fragile",
-  "Workforce challenges directly impact service capacity and customer experience",
-  "Winning dealerships build systems: comp stability + career ladders + training",
-];
-
 export default function HeroSection() {
   return (
     <section className="section-dark relative overflow-hidden">
@@ -54,29 +46,29 @@ export default function HeroSection() {
         </div>
 
         <div className="animate-fade-in" style={{ animationDelay: "0.4s", animationFillMode: "both" }}>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-12">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-8">
             Turnover, Talent, and the New Operating Model for U.S. Franchise Auto Dealerships
           </p>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+        {/* Thesis one-liner */}
+        <div className="animate-fade-in" style={{ animationDelay: "0.55s", animationFillMode: "both" }}>
+          <p className="text-xl md:text-2xl font-bold text-primary max-w-[700px] mb-12 leading-snug">
+            "Your turnover isn't a people problem — it's a system problem. And 42% of it is preventable."
+          </p>
+        </div>
+
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
           {stats.map((s) => (
             <StatCard key={s.label} {...s} />
           ))}
         </div>
 
+        {/* Single summary sentence replacing key findings */}
         <ScrollAnimate>
-          <div className="mb-10">
-            <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-4">Key Findings</h3>
-            <ul className="space-y-2">
-              {keyFindings.map((f, i) => (
-                <li key={i} className="flex items-start gap-2 text-muted-foreground text-sm md:text-base">
-                  <span className="text-primary mt-1.5 text-xs">•</span>
-                  {f}
-                </li>
-              ))}
-            </ul>
-          </div>
+          <p className="text-muted-foreground text-sm md:text-base mb-10 max-w-2xl">
+            This report breaks down where turnover concentrates, why satisfaction scores are misleading, and what the top-performing dealerships do differently.
+          </p>
         </ScrollAnimate>
 
         <p className="text-sm text-brand-caption mb-8">Published by WerkandMe · March 2026</p>

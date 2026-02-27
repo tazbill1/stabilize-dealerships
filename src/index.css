@@ -150,6 +150,15 @@
     border-radius: var(--radius);
   }
 
+  .insight-block {
+    background: #1E1E2E;
+  }
+
+  .proof-point-card {
+    background: #1A1A2E;
+    border-left: 4px solid hsl(var(--brand-green));
+  }
+
   .section-marker {
     @apply flex items-center gap-3 mb-8;
   }
