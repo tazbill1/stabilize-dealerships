@@ -24,13 +24,17 @@ const GapLabel = (props: any) => {
   if (index === undefined) return null;
   const gap = data[index]?.gap;
   if (!gap) return null;
+  const isMobile = width < 30;
+  const fontSize = isMobile ? 9 : 11;
+  const badgeW = isMobile ? 44 : 56;
+  const badgeFontSize = isMobile ? 8 : 10;
   return (
     <g>
-      <text x={x + width / 2} y={y - 8} textAnchor="middle" fill="#B0B0B0" fontWeight={600} fontSize={11}>
+      <text x={x + width / 2} y={y - 8} textAnchor="middle" fill="#B0B0B0" fontWeight={600} fontSize={fontSize}>
         {value}K
       </text>
-      <rect x={x + width / 2 - 28} y={y - 36} width={56} height={18} rx={4} fill="#FF6B35" />
-      <text x={x + width / 2} y={y - 24} textAnchor="middle" fill="#fff" fontSize={10} fontWeight={600}>
+      <rect x={x + width / 2 - badgeW / 2} y={y - 36} width={badgeW} height={16} rx={4} fill="#FF6B35" />
+      <text x={x + width / 2} y={y - 24} textAnchor="middle" fill="#fff" fontSize={badgeFontSize} fontWeight={600}>
         Gap: {gap}
       </text>
     </g>
@@ -65,13 +69,13 @@ export default function Section4Pipeline() {
         <h3 className="text-center text-foreground font-semibold text-base md:text-lg mb-6">
           Automotive Technician Pipeline: Persistent Supply Gap
         </h3>
-        <div style={{ height: 400 }}>
+        <div className="h-[350px] md:h-[400px]">
           <ResponsiveContainer width="100%" height="100%">
             <BarChart
               data={data}
-              margin={{ top: 55, right: 30, left: 10, bottom: 5 }}
-              barCategoryGap="30%"
-              barGap={4}
+              margin={{ top: 55, right: 10, left: 0, bottom: 5 }}
+              barCategoryGap="20%"
+              barGap={2}
             >
               <CartesianGrid strokeDasharray="3 3" stroke="#2A2A3A" vertical={false} />
               <XAxis

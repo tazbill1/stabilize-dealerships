@@ -42,25 +42,40 @@ export default function Section7Solutions() {
         </ScrollAnimate>
 
         <ScrollAnimate>
-          <div className="overflow-x-auto mb-14">
-            <table className="w-full text-sm border-collapse rounded-lg overflow-hidden shadow-sm">
-              <thead>
-                <tr style={{ backgroundColor: "#1A1A2E" }}>
-                  <th className="text-left px-4 py-3 font-semibold text-foreground">Lever</th>
-                  <th className="text-left px-4 py-3 font-semibold text-foreground">What It Means</th>
-                  <th className="text-left px-4 py-3 font-semibold text-foreground">Highest-Impact Roles</th>
-                </tr>
-              </thead>
-              <tbody>
-                {solutionsTable.map((row, i) => (
-                  <tr key={i} className={i % 2 === 0 ? "bg-[#FFFFFF]" : "bg-[#F5F5F0]"}>
-                    <td className="px-4 py-3 font-medium text-brand-light-foreground whitespace-nowrap">{row.lever}</td>
-                    <td className="px-4 py-3 text-brand-body-light">{row.what}</td>
-                    <td className="px-4 py-3 text-brand-body-light whitespace-nowrap">{row.roles}</td>
+          <div className="mb-14">
+            {/* Desktop table */}
+            <div className="hidden md:block overflow-x-auto">
+              <table className="w-full text-sm border-collapse rounded-lg overflow-hidden shadow-sm">
+                <thead>
+                  <tr style={{ backgroundColor: "#1A1A2E" }}>
+                    <th className="text-left px-4 py-3 font-semibold text-foreground">Lever</th>
+                    <th className="text-left px-4 py-3 font-semibold text-foreground">What It Means</th>
+                    <th className="text-left px-4 py-3 font-semibold text-foreground">Highest-Impact Roles</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  {solutionsTable.map((row, i) => (
+                    <tr key={i} className={i % 2 === 0 ? "bg-[#FFFFFF]" : "bg-[#F5F5F0]"}>
+                      <td className="px-4 py-3 font-medium text-brand-light-foreground whitespace-nowrap">{row.lever}</td>
+                      <td className="px-4 py-3 text-brand-body-light">{row.what}</td>
+                      <td className="px-4 py-3 text-brand-body-light whitespace-nowrap">{row.roles}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            {/* Mobile cards */}
+            <div className="md:hidden space-y-3">
+              {solutionsTable.map((row, i) => (
+                <div key={i} className="bg-white rounded-lg p-4 shadow-sm border-l-4" style={{ borderLeftColor: "#A8E10C" }}>
+                  <h4 className="font-semibold text-brand-light-foreground text-sm mb-2">{row.lever}</h4>
+                  <p className="text-brand-body-light text-xs leading-relaxed mb-2">{row.what}</p>
+                  <p className="text-brand-caption text-xs">
+                    <span className="font-medium text-brand-light-foreground">Roles:</span> {row.roles}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
         </ScrollAnimate>
 
