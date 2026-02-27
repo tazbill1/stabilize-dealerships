@@ -21,7 +21,7 @@ const data = [
 const CustomTick = ({ x, y, payload }: any) => {
   const lines = (payload?.value || "").split("\n");
   return (
-    <text x={x} y={y} textAnchor="middle" fill="#4A4A5A" fontSize={11}>
+    <text x={x} y={y + 8} textAnchor="middle" fill="#4A4A5A" fontSize={11}>
       {lines.map((line: string, i: number) => (
         <tspan x={x} dy={i === 0 ? 0 : 14} key={i}>{line}</tspan>
       ))}
@@ -61,7 +61,7 @@ export default function Section5Satisfaction() {
           <ResponsiveContainer width="100%" height="100%">
             <BarChart
               data={data}
-              margin={{ top: 30, right: 20, left: 0, bottom: 24 }}
+              margin={{ top: 30, right: 20, left: 0, bottom: 40 }}
               barCategoryGap="30%"
             >
               <CartesianGrid strokeDasharray="3 3" stroke="#ddd" horizontal vertical={false} />
@@ -71,7 +71,7 @@ export default function Section5Satisfaction() {
                 axisLine={{ stroke: "#ccc" }}
                 tickLine={false}
                 interval={0}
-                height={50}
+                height={60}
               />
               <YAxis
                 domain={[0, 100]}
