@@ -101,15 +101,18 @@ export default function Section5Satisfaction() {
             </BarChart>
           </ResponsiveContainer>
         </div>
-        {/* Declining arrow overlay */}
-        <div className="flex justify-center mt-1 mb-3">
-          <div className="flex items-center gap-1 text-brand-orange text-xs font-semibold">
-            <span>82%</span>
-            <svg width="80" height="16" viewBox="0 0 80 16" fill="none" className="mx-1">
-              <line x1="0" y1="2" x2="70" y2="14" stroke="#FF6B35" strokeWidth="2" strokeDasharray="4 3" />
-              <polygon points="70,10 80,14 70,18" fill="#FF6B35" />
-            </svg>
-            <span>39%</span>
+        {/* Declining trend indicator */}
+        <div className="flex justify-center mt-3 mb-3">
+          <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-card border border-border">
+            <span className="text-sm font-bold" style={{ color: "#2E7D32" }}>82%</span>
+            <div className="flex items-center gap-1">
+              <div className="w-16 h-px bg-gradient-to-r from-[#2E7D32] to-[#FF6B35]" />
+              <svg width="12" height="10" viewBox="0 0 12 10" fill="none">
+                <path d="M0 0 L12 5 L0 10" fill="#FF6B35" />
+              </svg>
+            </div>
+            <span className="text-sm font-bold" style={{ color: "#FF6B35" }}>39%</span>
+            <span className="text-xs text-muted-foreground ml-1">decline</span>
           </div>
         </div>
         <p className="text-center text-brand-caption text-xs mt-1">
