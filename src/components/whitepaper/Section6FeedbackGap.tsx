@@ -67,35 +67,47 @@ export default function Section6FeedbackGap() {
           </p>
         </ScrollAnimate>
 
-        {/* Data table */}
+        {/* Data table — desktop */}
         <ScrollAnimate>
-          <div className="mb-14 overflow-x-auto">
+          <div className="mb-14">
             <h4 className="text-foreground font-semibold text-base mb-4">Being Heard by the Numbers</h4>
-            <table className="w-full text-sm border-collapse">
-              <thead>
-                <tr className="bg-primary text-primary-foreground">
-                  <th className="text-left px-4 py-3 font-semibold rounded-tl-lg">Metric</th>
-                  <th className="text-left px-4 py-3 font-semibold">Finding</th>
-                  <th className="text-left px-4 py-3 font-semibold rounded-tr-lg">Source</th>
-                </tr>
-              </thead>
-              <tbody>
-                {tableData.map((row, i) => (
-                  <tr key={i} className="border-b border-border bg-card">
-                    <td className="px-4 py-3 font-medium text-foreground whitespace-nowrap">{row.metric}</td>
-                    <td className="px-4 py-3 text-muted-foreground">{row.finding}</td>
-                    <td className="px-4 py-3 text-brand-caption whitespace-nowrap">{row.source}</td>
+            <div className="hidden md:block overflow-x-auto">
+              <table className="w-full text-sm border-collapse">
+                <thead>
+                  <tr className="bg-primary text-primary-foreground">
+                    <th className="text-left px-4 py-3 font-semibold rounded-tl-lg">Metric</th>
+                    <th className="text-left px-4 py-3 font-semibold">Finding</th>
+                    <th className="text-left px-4 py-3 font-semibold rounded-tr-lg">Source</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  {tableData.map((row, i) => (
+                    <tr key={i} className="border-b border-border bg-card">
+                      <td className="px-4 py-3 font-medium text-foreground whitespace-nowrap">{row.metric}</td>
+                      <td className="px-4 py-3 text-muted-foreground">{row.finding}</td>
+                      <td className="px-4 py-3 text-brand-caption whitespace-nowrap">{row.source}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            {/* Mobile cards */}
+            <div className="md:hidden space-y-3">
+              {tableData.map((row, i) => (
+                <div key={i} className="bg-card border border-border rounded-lg p-4">
+                  <p className="text-foreground font-medium text-sm mb-1">{row.metric}</p>
+                  <p className="text-muted-foreground text-xs leading-relaxed mb-2">{row.finding}</p>
+                  <p className="text-brand-caption text-xs">{row.source}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </ScrollAnimate>
 
         {/* Prominent pull quote */}
         <ScrollAnimate>
-          <div className="py-12 md:py-16 text-center mb-14">
-            <p className="text-primary text-2xl md:text-3xl lg:text-4xl font-bold leading-snug max-w-3xl mx-auto">
+          <div className="py-10 md:py-14 text-center mb-12">
+            <p className="text-primary text-xl md:text-2xl lg:text-3xl font-bold leading-snug max-w-3xl mx-auto">
               "42% of employee turnover is preventable. Nearly half of the people who quit said management could have done something to keep them. The question is whether anyone asked."
             </p>
           </div>
