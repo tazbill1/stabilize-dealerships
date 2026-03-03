@@ -14,7 +14,7 @@ export default function AboutCTA() {
     <section className="section-padding" style={{ backgroundColor: "hsl(222 44% 14%)" }}>
       <div className="content-width relative pt-10">
         <div className="absolute top-0 right-0">
-          <img src={werkandmeLogo} alt="WerkandMe" className="h-6 md:h-7 opacity-70" />
+          <img src={werkandmeLogo} alt="WerkandMe" className="h-10 md:h-12 opacity-70" />
         </div>
         <ScrollAnimate>
           <p className="italic text-brand-caption text-sm mb-4">

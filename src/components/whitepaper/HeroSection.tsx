@@ -29,7 +29,7 @@ export default function HeroSection() {
       <div className="brand-green-bar w-full" />
 
       <div className="absolute top-5 right-6 md:right-10">
-        <img src={werkandmeLogo} alt="WerkandMe" className="h-6 md:h-7 opacity-80" />
+        <img src={werkandmeLogo} alt="WerkandMe" className="h-10 md:h-12 opacity-80" />
       </div>
 
       <div className="content-width pt-16 pb-20 md:pt-24 md:pb-28">
