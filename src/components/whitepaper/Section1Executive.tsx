@@ -144,7 +144,7 @@ export default function Section1Executive() {
           <div className="callout-green p-6 md:p-8">
             <h4 className="font-bold text-lg mb-3">What to do in the next 90 days:</h4>
             <p className="text-sm md:text-base leading-relaxed">
-              Run a churn diagnostic by role. Stabilize earnings in your highest-turnover departments. Launch a structured 30-60-90 day onboarding program for new hires. Track service appointment lead time as a workforce health indicator.
+              Run a churn diagnostic by role. Stabilize earnings in your highest-turnover departments. Launch a structured 30-60-90 day onboarding program for new hires. Create a process to gather and act on employee feedback.
             </p>
           </div>
         </ScrollAnimate>
