@@ -41,7 +41,7 @@ export default function HeroSection() {
 
         <div className="animate-fade-in" style={{ animationDelay: "0.25s", animationFillMode: "both" }}>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-foreground leading-tight mb-4">
-            Stabilizing the Dealership Workforce
+            The Dealership Workforce Report
           </h1>
         </div>
 
