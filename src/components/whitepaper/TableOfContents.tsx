@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useActiveSection } from "@/hooks/useActiveSection";
 import { Menu, X } from "lucide-react";
-import werkandmeLogo from "@/assets/werkandme-logo.png";
+import werkandmeIcon from "@/assets/werkandme-icon.png";
 
 const sections = [
   { id: "section-1", label: "Executive Summary" },
@@ -42,7 +42,7 @@ export default function TableOfContents() {
       {/* Desktop sidebar */}
       <nav className="toc-sidebar hidden lg:block fixed left-0 top-0 h-screen w-60 bg-secondary border-r border-border overflow-y-auto z-40 pt-12 pb-10">
         <div className="px-4 mb-6">
-          <img src={werkandmeLogo} alt="WerkandMe" className="h-6 mb-4" />
+          <img src={werkandmeIcon} alt="WerkandMe" className="h-8 mb-4" />
           <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Contents</span>
         </div>
         <TOCLinks activeId={activeId} />
@@ -70,7 +70,7 @@ export default function TableOfContents() {
               <X size={20} />
             </button>
             <div className="px-4 mb-6">
-              <img src={werkandmeLogo} alt="WerkandMe" className="h-6 mb-4" />
+              <img src={werkandmeIcon} alt="WerkandMe" className="h-8 mb-4" />
               <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Contents</span>
             </div>
             <TOCLinks activeId={activeId} onClickLink={() => setMobileOpen(false)} />
