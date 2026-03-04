@@ -27,6 +27,7 @@ const Index = () => {
         <Section6FeedbackGap />
         <Section7Solutions />
         <Section8CustomerExperience />
+        <Section9Methodology />
         <Section10About />
         <Footer />
       </div>
