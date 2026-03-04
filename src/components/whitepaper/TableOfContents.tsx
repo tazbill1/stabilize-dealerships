@@ -13,6 +13,7 @@ const sections = [
   { id: "section-7", label: "What Actually Works" },
   { id: "section-8", label: "The Customer Experience Connection" },
   { id: "section-9", label: "Methodology & Sources" },
+  { id: "section-10", label: "About WerkandMe" },
 ];
 
 function TOCLinks({ activeId, onClickLink }: { activeId: string; onClickLink?: () => void }) {

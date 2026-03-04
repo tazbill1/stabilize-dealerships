@@ -8,7 +8,7 @@ import Section6FeedbackGap from "@/components/whitepaper/Section6FeedbackGap";
 import Section7Solutions from "@/components/whitepaper/Section7Solutions";
 import Section8CustomerExperience from "@/components/whitepaper/Section8CustomerExperience";
 import Section9Methodology from "@/components/whitepaper/Section9Methodology";
-import AboutCTA from "@/components/whitepaper/AboutCTA";
+import Section10About from "@/components/whitepaper/Section10About";
 import Footer from "@/components/whitepaper/Footer";
 import TableOfContents from "@/components/whitepaper/TableOfContents";
 import BackToTop from "@/components/whitepaper/BackToTop";
@@ -27,8 +27,7 @@ const Index = () => {
         <Section6FeedbackGap />
         <Section7Solutions />
         <Section8CustomerExperience />
-        <Section9Methodology />
-        <AboutCTA />
+        <Section10About />
         <Footer />
       </div>
       <BackToTop />
