@@ -1,12 +1,6 @@
 import SectionMarker from "./SectionMarker";
 import ScrollAnimate from "./ScrollAnimate";
 
-const definitions = [
-  { term: "Franchise dealership", def: "A new-car dealership operating under a franchise agreement with one or more OEMs. Does not include independent used-car dealers or aftermarket service-only facilities." },
-  { term: "Annualized turnover", def: "Separations during the period divided by average headcount, annualized. Consistent with NADA Dealership Workforce Study methodology." },
-  { term: "Occupation proxies", def: "Where dealership-specific demographic data is unavailable, BLS Current Population Survey occupation categories are used as proxies. These are clearly labeled in all charts." },
-];
-
 const sources = [
   { name: "NADA Data Mid-Year 2025", desc: "Industry scale, workforce composition, operating benchmarks" },
   { name: "NADA Dealership Workforce Study (2024 data)", desc: "Role-level turnover, retention, tenure, compensation" },
@@ -30,24 +24,12 @@ export default function Section9Methodology() {
   return (
     <section id="section-9" className="section-light section-padding">
       <div className="content-width">
-        <SectionMarker number={9} title="Methodology, Sources & Definitions" light />
+        <SectionMarker number={9} title="Methodology & Sources" light />
 
         <ScrollAnimate>
           <p className="text-brand-body-light text-sm md:text-base leading-relaxed mb-12">
             This report synthesizes publicly available data from established industry sources. No primary research was conducted; all figures are attributed to their original sources. Where estimates are directional or illustrative (marked as such in chart captions), this reflects the limitations of publicly available data and should not be cited as precise forecasts.
           </p>
-        </ScrollAnimate>
-
-        <ScrollAnimate>
-          <h3 className="text-lg font-bold text-brand-light-foreground mb-6">Key Definitions</h3>
-          <div className="space-y-4 mb-14">
-            {definitions.map((d) => (
-              <div key={d.term} className="finding-card finding-border-green p-5">
-                <h4 className="font-semibold text-brand-light-foreground text-sm mb-1">{d.term}</h4>
-                <p className="text-brand-body-light text-sm leading-relaxed">{d.def}</p>
-              </div>
-            ))}
-          </div>
         </ScrollAnimate>
 
         <ScrollAnimate>
