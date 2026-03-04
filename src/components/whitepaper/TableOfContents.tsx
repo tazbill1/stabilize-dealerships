@@ -40,9 +40,9 @@ export default function TableOfContents() {
   return (
     <>
       {/* Desktop sidebar */}
-      <nav className="toc-sidebar hidden lg:block fixed left-0 top-0 h-screen w-60 bg-secondary border-r border-border overflow-y-auto z-40 pt-12 pb-10">
+      <nav className="toc-sidebar hidden lg:block fixed left-0 top-0 h-screen w-60 bg-secondary border-r border-border overflow-y-auto z-40 pt-6 pb-10">
         <div className="px-4 mb-6">
-          <img src={werkandmeIcon} alt="WerkandMe" className="h-8 mb-4" />
+          <img src={werkandmeIcon} alt="WerkandMe" className="h-12 mb-4" />
           <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Contents</span>
         </div>
         <TOCLinks activeId={activeId} />
@@ -61,7 +61,7 @@ export default function TableOfContents() {
       {mobileOpen && (
         <div className="lg:hidden fixed inset-0 z-50 flex">
           <div className="absolute inset-0 bg-black/60" onClick={() => setMobileOpen(false)} />
-          <nav className="relative w-72 max-w-[80vw] bg-secondary h-full overflow-y-auto pt-12 pb-10 shadow-2xl">
+          <nav className="relative w-72 max-w-[80vw] bg-secondary h-full overflow-y-auto pt-6 pb-10 shadow-2xl">
             <button
               onClick={() => setMobileOpen(false)}
               className="absolute top-4 right-4 text-muted-foreground hover:text-foreground"
@@ -70,7 +70,7 @@ export default function TableOfContents() {
               <X size={20} />
             </button>
             <div className="px-4 mb-6">
-              <img src={werkandmeIcon} alt="WerkandMe" className="h-8 mb-4" />
+              <img src={werkandmeIcon} alt="WerkandMe" className="h-12 mb-4" />
               <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Contents</span>
             </div>
             <TOCLinks activeId={activeId} onClickLink={() => setMobileOpen(false)} />
