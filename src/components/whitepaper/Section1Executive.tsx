@@ -118,19 +118,19 @@ export default function Section1Executive() {
         <ScrollAnimate>
           <div className="mb-12">
             <h3 className="text-xl md:text-2xl font-extrabold text-primary mb-6">The Hard Truth</h3>
-            <div className="text-white/80 text-sm md:text-base leading-relaxed space-y-4">
+            <div className="text-brand-light-foreground/80 text-sm md:text-base leading-relaxed space-y-4">
               <p>For years the industry has tried to solve turnover with recruiting.</p>
               <ul className="space-y-1 pl-1">
-                <li className="text-white/60">More job postings.</li>
-                <li className="text-white/60">More hiring events.</li>
-                <li className="text-white/60">More signing bonuses.</li>
+                <li className="text-brand-light-foreground/60">More job postings.</li>
+                <li className="text-brand-light-foreground/60">More hiring events.</li>
+                <li className="text-brand-light-foreground/60">More signing bonuses.</li>
               </ul>
-              <p className="font-semibold text-white">But recruiting does not solve a retention problem.</p>
+              <p className="font-semibold text-brand-light-foreground">But recruiting does not solve a retention problem.</p>
               <p>The dealership workforce model was designed for a different era.</p>
               <p>Commission volatility, unclear career paths, and reactive onboarding made sense when the labor supply was abundant.</p>
               <p className="font-semibold text-primary">That era is over.</p>
               <p>The dealerships that win the next decade will not be the ones that hire the fastest.</p>
-              <p className="font-bold text-white text-base md:text-lg">They will be the ones that keep the people they already have.</p>
+              <p className="font-bold text-brand-light-foreground text-base md:text-lg">They will be the ones that keep the people they already have.</p>
             </div>
           </div>
         </ScrollAnimate>
