@@ -71,7 +71,7 @@ export default function HeroSection() {
           </p>
         </ScrollAnimate>
 
-        <p className="text-sm text-brand-caption mb-8">Published by WerkandMe · March 2026</p>
+        <p className="text-sm text-brand-caption mb-8">Published by <a href="https://www.werkandme.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary transition-colors">WerkandMe</a> · March 2026</p>
 
         <div className="flex flex-wrap gap-4 hero-cta-buttons">
           <a
