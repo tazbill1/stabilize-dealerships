@@ -46,16 +46,26 @@ export default function HeroSection() {
         </div>
 
         <div className="animate-fade-in" style={{ animationDelay: "0.4s", animationFillMode: "both" }}>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-8">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-6">
             Turnover, Talent, and the New Operating Model for U.S. Franchise Auto Dealerships
           </p>
         </div>
 
         {/* Thesis one-liner */}
         <div className="animate-fade-in" style={{ animationDelay: "0.55s", animationFillMode: "both" }}>
-          <p className="text-xl md:text-2xl font-bold text-primary max-w-[700px] mb-12 leading-snug">
+          <p className="text-xl md:text-2xl font-bold text-primary max-w-[700px] mb-8 leading-snug">
             "Your turnover isn't a people problem — it's a system problem. And 42% of it is preventable."
           </p>
+        </div>
+
+        {/* Reading time + scroll hook */}
+        <div className="animate-fade-in flex items-center gap-4 mb-10" style={{ animationDelay: "0.6s", animationFillMode: "both" }}>
+          <span className="text-xs font-medium text-muted-foreground bg-muted/50 px-3 py-1.5 rounded-full">
+            📖 12 min read
+          </span>
+          <span className="text-xs font-medium text-muted-foreground bg-muted/50 px-3 py-1.5 rounded-full">
+            📊 10 sections · 25+ data points
+          </span>
         </div>
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
@@ -75,18 +85,24 @@ export default function HeroSection() {
 
         <div className="flex flex-wrap gap-4 hero-cta-buttons">
           <a
-            href="#"
-            title="PDF coming soon"
-            onClick={(e) => { e.preventDefault(); window.print(); }}
+            href="#section-1"
             className="px-6 py-3 rounded-lg bg-primary text-primary-foreground font-semibold text-sm hover:bg-brand-green-hover transition-all duration-200 hover:shadow-lg hover:shadow-primary/20"
           >
-            Download PDF
+            Start Reading ↓
           </a>
           <a
             href="#section-7"
             className="px-6 py-3 rounded-lg border border-primary text-primary font-semibold text-sm hover:bg-primary/10 transition-all duration-200"
           >
             Jump to Solutions
+          </a>
+          <a
+            href="#"
+            title="PDF coming soon"
+            onClick={(e) => { e.preventDefault(); window.print(); }}
+            className="px-6 py-3 rounded-lg border border-border text-muted-foreground font-semibold text-sm hover:bg-muted/20 transition-all duration-200"
+          >
+            Download PDF
           </a>
         </div>
       </div>
