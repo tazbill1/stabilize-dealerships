@@ -28,9 +28,9 @@ export default function HeroSection() {
       <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent pointer-events-none z-10" />
       <div className="brand-green-bar w-full" />
 
-      <div className="absolute top-5 right-6 md:right-10">
-        <img src={werkandmeLogo} alt="WerkandMe" className="h-10 md:h-12 opacity-80" />
-      </div>
+      <a href="https://www.werkandme.com/" target="_blank" rel="noopener noreferrer" className="absolute top-5 right-6 md:right-10">
+        <img src={werkandmeLogo} alt="WerkandMe" className="h-10 md:h-12 opacity-80 hover:opacity-100 transition-opacity" />
+      </a>
 
       <div className="content-width pt-16 pb-20 md:pt-24 md:pb-28">
         <div className="animate-fade-in" style={{ animationDelay: "0.1s", animationFillMode: "both" }}>
@@ -71,7 +71,7 @@ export default function HeroSection() {
           </p>
         </ScrollAnimate>
 
-        <p className="text-sm text-brand-caption mb-8">Published by WerkandMe · March 2026</p>
+        <p className="text-sm text-brand-caption mb-8">Published by <a href="https://www.werkandme.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary transition-colors">WerkandMe</a> · March 2026</p>
 
         <div className="flex flex-wrap gap-4 hero-cta-buttons">
           <a
